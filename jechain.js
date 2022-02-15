@@ -41,8 +41,10 @@ class blockChain {
         block.hash = block.getHash();
 
         block.mine(this.difficulty);
-
+        
         this.chain.push(block);
+
+        this.difficulty += Date.now() - parseInt(this.getLastBlock().timestamp) < this.blockTime ? 1 : -1;
     }
 
     isValid(blockchain = this) {
