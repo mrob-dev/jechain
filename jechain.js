@@ -1,6 +1,6 @@
 const crypto = require("crypto"), SHA256 = message => crypto.createHash("sha256").update(message).digest("hex");
 
-// Block creation
+// Block creation class
 
 class Block {
     constructor(timestamp= "", data= []) {
@@ -60,11 +60,12 @@ class blockChain {
     }
 }
 
-// JeChain creation
+/* JeChain creation
 
 const JeChain = new blockChain();
 JeChain.addBlock(new Block(Date.now().toString(), ["Hello", "Waarld"]));
 JeChain.addBlock(new Block(Date.now().toString(), ["Hello", "Warld"]));
 JeChain.addBlock(new Block(Date.now().toString(), ["Hello", "Wurld"]));
 JeChain.addBlock(new Block(Date.now().toString(), ["Hello", "Werld"]));
-console.log(JeChain.chain);
+console.log(JeChain);
+/*
